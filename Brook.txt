@@ -1,1 +1,0 @@
-brook://wsserver?wsserver=ws://mack-a.takhfifan.tk:2052/ws&password=@xProxyy#brook
