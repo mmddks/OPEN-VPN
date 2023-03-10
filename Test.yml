@@ -1,0 +1,47 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: silent
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:53
+  enhanced-mode: redir-host
+  nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+proxies:
+  - {name: Nim, server: s3.vipvps.co, port: 34637, type: vmess, uuid: 826da6ff-d80f-457b-e431-e5d73cb85fd6, alterId: 0, cipher: auto, udp: false, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: nim.iranlms.ir}}}
+  - {name: Direct, server: s3.vipvps.co, port: 34637, type: vmess, uuid: 826da6ff-d80f-457b-e431-e5d73cb85fd6, alterId: 0, cipher: auto, udp: false, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: nim.iranlms.ir}}}
+proxy-groups:
+  - name: 🛠 MENU
+    type: select
+    proxies:
+      - ✈️ AUTOMATIC
+      - 🚀 MANUAL
+  - name: 🚀 MANUAL
+    type: select
+    proxies:
+      - Nim
+      - Direct
+  - name: ✈️ AUTOMATIC
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - Nim
+      -  Direct
+rules:
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,fd00::/8,DIRECT,no-resolve
+  - MATCH,🛠 MENU
+        
