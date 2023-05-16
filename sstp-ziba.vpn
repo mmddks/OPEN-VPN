@@ -1,0 +1,1 @@
+{"encrypted":false,"version":1,"profiles":[{"stayAwake":false,"ondemand":false,"proto":0,"insecureLogin":false,"server":"s2.vipvps.co","logLevel":0,"defaultRoute":true,"tlsCheck":true,"password":"emQ=","autoReconnect":true,"passwordType":0,"username":"zd","tunnelIPVersion":0,"autoUpgrade":true,"disableOldTLS":false,"randomIID":false,"name":"Ziba-SSTP","port":"443"}]}
