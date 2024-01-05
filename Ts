@@ -1,1 +1,1 @@
-https://s2.torob.vip:1194/Tahmasbi
+vless://4c09a70b-ef5e-4a5c-8c24-454a46544e46@s2.torob.vip:80/?type=ws&path=%2F&security=none#Tahmasbi
